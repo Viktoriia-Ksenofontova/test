@@ -1,22 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import './scss/_main.scss';
+import logo from './images/virna-logo.svg';
 
 function App() {
   return (
-    <div className="App">
+    <div className="wrapper">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+       <img src={logo} alt="logo" />
+        <h1>Ukrainian brand</h1>
       </header>
     </div>
   );

@@ -1,0 +1,17 @@
+@import "modern-normalize/modern-normalize.css";
+@import "./base.scss";
+
+@font-face {
+  font-family: "Cera Pro";
+  src: local("Cera Pro Regular"), local("CeraPro-Regular"),
+    url(../font/CeraPro-Regular.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Cera Pro";
+  src: local("Cera Pro Medium"), local("CeraPro-Medium"),
+    url(../font/CeraPro-Medium.woff) format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
