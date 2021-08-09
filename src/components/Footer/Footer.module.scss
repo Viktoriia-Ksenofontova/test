@@ -1,0 +1,53 @@
+@import "../../scss/vars.scss";
+@import "../../scss/breakpoints.scss";
+
+.footer {
+  border-top: 1px solid grey;
+  padding: 15px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+  p {
+    margin: 0;
+  }
+}
+
+.footerText {
+  text-align: center;
+  width: 100%;
+}
+
+.footerContacts {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  @media screen and (min-width: $tablet) {
+    justify-content: center;
+    p {
+      margin-right: 25px;
+    }
+  }
+}
+.socialList {
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.socialIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.socialLink:hover,
+.socialLink:focus {
+  .socialIcon path {
+    stroke: $bordo;
+  }
+  .socialIcon rect {
+    stroke: $bordo;
+  }
+}

@@ -1,0 +1,82 @@
+@import "../../scss/vars.scss";
+
+.productInfo {
+  position: relative;
+}
+.category {
+  position: absolute;
+  margin: 0;
+  z-index: 1;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+
+  transform: rotate(180deg);
+  font-weight: 500;
+  font-size: 12px;
+}
+.productImage {
+  width: 280px;
+  height: 385px;
+  margin-bottom: 30px;
+}
+
+.sale {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 1;
+  width: 60px;
+  height: 25px;
+  margin: 0;
+  padding: 5px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 500;
+  font-size: 12px;
+  background-color: $bordo;
+  color: white;
+}
+.colorList {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-bottom: 15px;
+}
+.colorItem {
+  width: 10px;
+  height: 10px;
+  margin-right: 16px;
+}
+.name {
+  width: 215px;
+  margin: 0 auto 15px auto;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.like,
+.likeActive {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+.price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  color: $bordo;
+  font-weight: normal;
+  font-size: 14px;
+
+  span {
+    margin-left: 14px;
+    font-size: 12px;
+    text-decoration-line: line-through;
+    color: #565656;
+  }
+}

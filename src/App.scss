@@ -1,0 +1,23 @@
+@import "./scss/breakpoints.scss";
+
+.wrapper {
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: #ffffff;
+  max-width: 1920px;
+  @media screen and (max-width: $mobile-max) {
+    width: 360px;
+  }
+  @media screen and (min-width: $tablet) {
+    width: 768px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 960px;
+  }
+  @media screen and (min-width: $desktop-plus) {
+    width: 1366px;
+  }
+  @media screen and (min-width: $desktop-plus-max) {
+    width: 1440px;
+  }
+}

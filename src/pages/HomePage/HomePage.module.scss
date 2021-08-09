@@ -1,0 +1,196 @@
+@import "../../scss/breakpoints.scss";
+
+.banner {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  background-position: center;
+  background-repeat: no-repeat;
+  @media screen and (max-width: $mobile-max) {
+    background-size: cover;
+    height: 455px;
+  }
+  @media screen and (min-width: $tablet) {
+    background-size: contain;
+    background-position: right;
+    height: 457px;
+  }
+  @media screen and (min-width: $desktop) {
+    height: 530px;
+  }
+  @media screen and (min-width: $desktop-plus) {
+    height: 810px;
+  }
+  @media screen and (min-width: $desktop-plus-max) {
+    height: 802px;
+  }
+}
+
+.header {
+  padding: 30px 0 30px 0px;
+  // height: 100vh;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(40px);
+  @media screen and (max-width: $mobile-max) {
+    width: 165px;
+    height: 455px;
+  }
+  @media screen and (min-width: $tablet) {
+    width: 400px;
+    height: 457px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 465px;
+    height: 530px;
+  }
+  @media screen and (min-width: $desktop-plus) {
+    width: 693px;
+    height: 810px;
+  }
+  @media screen and (min-width: $desktop-plus-max) {
+    width: 732px;
+    height: 802px;
+  }
+}
+.promo {
+  position: relative;
+  // height: 100vh;
+  background-color: #fff;
+  @media screen and (max-width: $mobile-max) {
+    width: 70px;
+    height: 455px;
+    padding: 30px 15px 30px 10px;
+  }
+  @media screen and (min-width: $tablet) {
+    width: 130px;
+    height: 457px;
+    padding: 30px 40px 30px 45px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 225px;
+    height: 530px;
+    padding: 30px 95px 30px 70px;
+  }
+  @media screen and (min-width: $desktop-plus) {
+    width: 268px;
+    height: 810px;
+    padding: 30px 98px 30px 105px;
+  }
+  @media screen and (min-width: $desktop-plus-max) {
+    width: 324px;
+    height: 802px;
+    padding: 30px 134px 30px 124px;
+  }
+
+  img {
+    @media screen and (max-width: $mobile-max) {
+      margin-bottom: 100px;
+    }
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 110px;
+    }
+    @media screen and (min-width: $desktop) {
+      width: 60px;
+      margin-bottom: 140px;
+    }
+    @media screen and (min-width: $desktop-plus) {
+      width: 65px;
+      margin-bottom: 238px;
+    }
+  }
+}
+
+.title {
+  position: absolute;
+  z-index: 1;
+  width: 290px;
+  height: 84px;
+  top: 106px;
+
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: #000000;
+  @media screen and (max-width: $mobile-max) {
+    left: 16px;
+  }
+  @media screen and (min-width: $tablet) {
+    left: 40px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 48px;
+    height: 96px;
+    left: 98px;
+    top: 123px;
+  }
+  @media screen and (min-width: $desktop-plus) {
+    font-size: 72px;
+    width: 470px;
+    height: 144px;
+    top: 203px;
+  }
+  @media screen and (min-width: $desktop-plus-max) {
+    top: 198px;
+    left: 140px;
+  }
+}
+
+.subtitle {
+  position: absolute;
+  z-index: 1;
+  text-align: right;
+  margin: 0;
+  width: 130px;
+  height: 70px;
+
+  transform: rotate(-90deg);
+  top: 285px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: #000000;
+  @media screen and (max-width: $mobile-max) {
+    left: -10px;
+  }
+  @media screen and (min-width: $tablet) {
+    left: 15px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 14px;
+    top: 300px;
+    left: 65px;
+  }
+  @media screen and (min-width: $desktop-plus) {
+    top: 440px;
+  }
+  @media screen and (min-width: $desktop-plus-max) {
+    top: 435px;
+    left: 110px;
+  }
+}
+.text {
+  display: flex;
+  color: #000000;
+  font-size: 14px;
+  line-height: 1.28;
+  writing-mode: vertical-rl;
+  float: right;
+
+  p {
+    margin: 0 0 40px 0;
+    height: 80px;
+    @media screen and (min-width: $desktop) {
+      height: 90px;
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+  }
+  b {
+    font-weight: 500;
+    @media screen and (min-width: $desktop) {
+      font-size: 16px;
+    }
+  }
+}

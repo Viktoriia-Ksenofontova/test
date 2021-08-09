@@ -1,5 +1,4 @@
-@import "modern-normalize/modern-normalize.css";
-@import "./base.scss";
+@import "./vars.scss";
 
 @font-face {
   font-family: "Cera Pro";
@@ -14,4 +13,14 @@
     url(../font/CeraPro-Medium.woff) format("woff");
   font-weight: 500;
   font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: $main-font;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.32;
+  background-color: $main-background;
+  color: $text-dark;
 }
