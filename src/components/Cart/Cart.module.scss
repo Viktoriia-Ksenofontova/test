@@ -1,0 +1,78 @@
+@import "../../scss/vars.scss";
+.cart {
+  text-align: center;
+}
+.title {
+  font-size: 16px;
+}
+.name {
+  margin: 0 10px;
+  font-size: 13px;
+  font-weight: 400;
+  flex: 3;
+}
+.shoppingList {
+  list-style: none;
+  padding: 0;
+  overflow: auto;
+}
+.productItem {
+  display: flex;
+  align-items: center;
+  width: 320px;
+  border: 1px solid grey;
+  padding: 5px;
+  margin-bottom: 10px;
+
+  .price,
+  .number {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 500;
+  }
+}
+.productImage {
+  height: auto;
+  margin-left: 10px;
+}
+
+.toOrder {
+  width: 160px;
+  height: 25px;
+  padding: 5px;
+  border: none;
+  margin: 0 auto;
+  text-align: center;
+  background-color: $bordo;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  &:hover,
+  &:focus {
+    box-shadow: 0px 6px 26px 0px rgba(0, 5, 97, 0.1);
+    transform: scale(1.03);
+  }
+}
+.deleteBtn {
+  text-align: center;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  border-radius: 2px;
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+
+  &:hover,
+  &:focus {
+    svg {
+      transform: scale(1.3);
+      path {
+        fill: $bordo;
+      }
+    }
+  }
+}

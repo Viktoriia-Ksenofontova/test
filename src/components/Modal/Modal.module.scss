@@ -1,0 +1,76 @@
+@import "../../scss/vars.scss";
+@import "../../scss/breakpoints.scss";
+
+@keyframes showModalBackdrop {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes showModalSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rotateCloseBtn {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+.backdrop {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  background-color: rgba(130, 127, 127, 0.3);
+  height: 100%;
+  width: 100%;
+  animation: showModalBackdrop 200ms forwards;
+  overflow-y: hidden;
+}
+
+.closeModalBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 9px;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+
+  &:hover {
+    animation: rotateCloseBtn 600ms forwards;
+  }
+}
+
+.content {
+  position: relative;
+  margin: 0 auto;
+  padding: 20px;
+  width: 360px;
+  background-color: white;
+  animation: showModalSlide 400ms forwards;
+  box-shadow: 0px 6px 26px 0px rgba(0, 5, 97, 0.1);
+
+  // .childrenWrap {
+  //   @media screen and (max-width: $mobile-max) {
+  //     width: 100%;
+  //     max-width: $mobile-max;
+  //   }
+  // }
+}

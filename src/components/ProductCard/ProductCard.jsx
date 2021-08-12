@@ -21,22 +21,36 @@ const ProductCard = ({ product }) => {
       <h3 className={styles.category} >{product.category}</h3>
       <div className={styles.productInfo}>
         <img src={product.img} alt={product.name} className={styles.productImage}/>
-        {product.sale ? <p className={styles.sale} >Sale</p> : null}
-        {product.likes ? <Like className = {styles.likeActive} /> : <Like className = { styles.like }/> }
+        {product.sale ? <p className={styles.sale}> Sale </p> : null}
+        <button type="button" className = {styles.btnLike} >
+          <Like className = { product.likes ? styles.likeActive : styles.like }/> 
+        </button>
+        
+        {product.new ? <p className={styles.new}> New </p> : null}
+
+         <div className={styles.btnWrapper}>
+        <button type="button" > в корзину </button>
+        </div>
+        
       </div>
       
-      {product.new ? <p>New</p> : null}
-           
-      <ul className={styles.colorList}>
+     
+
+      <div className={styles.colorList}>
         {product.colors.map(color => (
-        <li key={color} className={styles.colorItem} style={{ backgroundColor: `#${color}` }}>
-        </li>
+          <input
+            name={product.id}
+            value={color}
+            type="radio"
+            className={styles.colorItem}
+            style={{ backgroundColor: `#${color}` }}
+        />
         ))}
-      </ul>
+      </div>
       <p className={styles.name}>{product.name}</p>
       <div className={styles.price}>
         <p >{product.price} грн </p>
-        <span>{product.old_price} грн </span>
+       {product.old_price? <span>{product.old_price} грн </span>: null}
       </div>
   
     </div>

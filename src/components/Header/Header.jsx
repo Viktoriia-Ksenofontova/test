@@ -2,28 +2,25 @@ import { Link } from 'react-router-dom';
 import logo from '../../images/virna-logo.svg';
 import menu from '../../images/icon_menu.svg';
 import like from '../../images/icon_like.svg';
-import cart from '../../images/icon_cart.svg';
-import instagram from "../../images/icon_camera.svg";
+import { ReactComponent as Cart } from '../../images/icon_cart.svg';
 import styles from "./Header.module.scss"
 
-const Header = () => {
+const Header = ({ onCartClick }) => {
   return (
     <header className={styles.header}>
-      <img src={logo} alt="logo" className={styles.logo} />
-      <div className={styles.nav}>
-        <Link className={styles.navLink}>
-          <img src={menu} alt="menu" height="20" width= "20" />
+      <Link className={styles.headerLink}>
+        <img src={menu} alt="menu" height="20" width= "20" />
+      </Link>
+       <Link className={styles.logoLink}>
+        <img src={logo} alt="logo" className={styles.logo} />
         </Link>
-        <Link>
-          <img src={like} alt="favourite" height="20" width= "20"/>
-        </Link>
-        <Link>
-          <img src={instagram} alt="instagram icon" height="20" width= "20"/>
-        </Link>
-        <Link>
-          <img src={cart} alt="cart" height="20" width= "20" />
-        </Link> 
-      </div>
+      <Link className={styles.headerLink}>
+        <img src={like} alt="favourite" height="20" width= "20"/>
+      </Link>
+      <Cart className={styles.cart}
+        onClick={onCartClick}
+      />
+      <span className={styles.cartSum}>0</span>
       
     </header>
   );

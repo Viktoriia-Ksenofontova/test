@@ -1,0 +1,45 @@
+@import "../../scss/breakpoints.scss";
+
+.header {
+  font-family: Cera Pro, sans-serif;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  @media screen and (max-width: $mobile-max) {
+    transform: translate(16px, calc(455px - 80px));
+    max-width: calc(100% - 30px);
+  }
+  @media screen and (min-width: $tablet) {
+    transform: translate(40px, calc(457px - 80px));
+    max-width: calc(100% - 80px);
+  }
+  @media screen and (min-width: $desktop) {
+    transform: translate(98px, calc(530px - 80px));
+    max-width: calc(100% - 196px);
+  }
+  @media screen and (min-width: $desktop-plus) {
+    transform: translate(98px, calc(810px - 80px));
+  }
+  @media screen and (min-width: $desktop-plus-max) {
+    transform: translate(140px, calc(802px - 80px));
+    max-width: calc(100% - 280px);
+  }
+}
+
+.logo {
+  position: absolute;
+  @media screen and (max-width: $mobile-max) {
+    left: 16px;
+  }
+  @media screen and (min-width: $tablet) {
+    left: 40px;
+  }
+  @media screen and (min-width: $desktop) {
+    left: 98px;
+  }
+  @media screen and (min-width: $desktop-plus-max) {
+    left: 140px;
+  }
+}

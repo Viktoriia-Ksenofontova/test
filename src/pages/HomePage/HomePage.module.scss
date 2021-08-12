@@ -26,7 +26,8 @@
   }
 }
 
-.header {
+.sidebar {
+  position: relative;
   padding: 30px 0 30px 0px;
   // height: 100vh;
   background-color: rgba(255, 255, 255, 0.85);
@@ -52,6 +53,7 @@
     height: 802px;
   }
 }
+
 .promo {
   position: relative;
   // height: 100vh;
@@ -191,6 +193,418 @@
     font-weight: 500;
     @media screen and (min-width: $desktop) {
       font-size: 16px;
+    }
+  }
+}
+
+.target {
+  h2 {
+    margin: 0 0 30px 0;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 28px;
+    color: #000;
+  }
+  p {
+    margin-left: auto;
+    margin-right: auto;
+    width: 270px;
+    font-size: 12px;
+    line-height: 1.324;
+  }
+  @media screen and (max-width: $mobile-max) {
+    padding-top: 82px;
+    padding-left: 15px;
+    margin-bottom: 118px;
+  }
+  @media screen and (min-width: $tablet) {
+    padding-top: 100px;
+    padding-left: 400px;
+    margin-bottom: 58px;
+    h2 {
+      margin-bottom: 45px;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    padding-left: 496px;
+    margin-bottom: 28px;
+    h2 {
+      margin-bottom: 62px;
+      font-size: 24px;
+    }
+    p {
+      font-size: 13px;
+    }
+  }
+  @media screen and (min-width: $desktop-plus) {
+    padding-top: 150px;
+    padding-left: 698px;
+    margin-bottom: 115px;
+    h2 {
+      margin-bottom: 50px;
+      font-size: 30px;
+    }
+    p {
+      font-size: 14px;
+      width: 375px;
+    }
+  }
+  @media screen and (min-width: $desktop-plus-max) {
+    padding-top: 157px;
+    padding-left: 735px;
+    margin-bottom: 108px;
+  }
+}
+
+.filtersSection {
+  position: relative;
+  background-color: rgba(246, 251, 254, 1);
+
+  img {
+    position: absolute;
+  }
+  h3 {
+    margin: 0 0 19px 0;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    line-height: 15px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #000000;
+  }
+  ul {
+    margin: 0;
+    list-style: none;
+    line-height: 1.67;
+    letter-spacing: 0.03em;
+    li {
+      position: relative;
+      margin-bottom: 15px;
+      &::before {
+        content: "✔";
+        position: absolute;
+        top: 0;
+        left: -14px;
+      }
+    }
+  }
+  p {
+    margin: 0;
+    position: absolute;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 2.31;
+    width: 50px;
+    &::after {
+      width: 10px;
+      content: "✖";
+      position: absolute;
+      top: -8px;
+      right: -20px;
+    }
+  }
+
+  @media screen and (max-width: $mobile-max) {
+    height: 185px;
+    padding-left: 210px;
+    padding-top: 15px;
+    margin-bottom: 107px;
+    img {
+      width: 180px;
+      left: 14px;
+      top: -20px;
+    }
+    h3 {
+      font-size: 12px;
+      height: 45px;
+    }
+    ul {
+      font-size: 12px;
+    }
+    p {
+      bottom: -64px;
+    }
+  }
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    height: 240px;
+    padding-left: 453px;
+    padding-top: 50px;
+    margin-bottom: 120px;
+    img {
+      width: 280px;
+      left: 84px;
+      top: -70px;
+    }
+    h3 {
+      font-size: 14px;
+      height: 52px;
+    }
+    ul {
+      font-size: 13px;
+    }
+    p {
+      bottom: -40px;
+      left: 460px;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    padding-left: 575px;
+    padding-top: 68px;
+    margin-bottom: 145px;
+    img {
+      width: 322px;
+      left: 143px;
+      top: -96px;
+    }
+    p {
+      left: 575px;
+    }
+  }
+  @media screen and (min-width: $desktop-plus) {
+    height: 330px;
+    padding-left: 798px;
+    padding-top: 107px;
+    margin-bottom: 292px;
+    img {
+      width: 520px;
+      left: 156px;
+      top: -195px;
+    }
+    h3 {
+      margin-right: 80px;
+    }
+    p {
+      bottom: -50px;
+      left: 798px;
+    }
+  }
+  @media screen and (min-width: $desktop-plus-max) {
+    padding-left: 835px;
+    img {
+      left: 165px;
+      top: -191px;
+    }
+    p {
+      bottom: -60px;
+      left: 830px;
+    }
+  }
+}
+
+.fashionSection {
+  h2 {
+    margin: 0 0 30px 0;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    padding: 0;
+    margin: 0 0 30px 0;
+    list-style: none;
+    font-size: 13px;
+    line-height: 2.31;
+    color: #808080;
+    li {
+      position: relative;
+      &::after {
+        content: "✔";
+        position: absolute;
+        top: 0;
+        right: -14px;
+        color: #000000;
+      }
+      span {
+        margin-left: 7px;
+        font-weight: 500;
+        color: #000000;
+      }
+    }
+  }
+
+  img {
+    width: 330px;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (max-width: $mobile-max) {
+    padding: 0 15px;
+    h2 {
+      width: 220px;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    padding: 0 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    h2 {
+      padding: 0 110px 0 360px;
+      margin-bottom: 35px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    padding: 0 95px;
+    h2 {
+      padding: 0 150px 0 400px;
+      margin-bottom: 7px;
+      font-size: 36px;
+      line-height: 45px;
+    }
+    img {
+      width: 370px;
+    }
+    ul {
+      width: 100%;
+      padding-left: 40px;
+    }
+  }
+  @media screen and (min-width: $desktop-plus) {
+    padding: 0 98px;
+    h2 {
+      padding: 0 100px 0 600px;
+      margin-bottom: 0px;
+      font-size: 56px;
+      line-height: 70px;
+    }
+    img {
+      width: 570px;
+    }
+    ul {
+      padding-left: 100px;
+    }
+  }
+  @media screen and (min-width: $desktop-plus-max) {
+    padding: 0 135px;
+    ul {
+      padding-left: 0;
+      justify-content: space-around;
+    }
+  }
+}
+
+.cardText {
+  margin-left: auto;
+  margin-top: 0;
+  font-size: 14px;
+  line-height: 1.14;
+  height: 20px;
+  @media screen and (max-width: $mobile-max) {
+    margin-bottom: 30px;
+  }
+  @media screen and (min-width: $tablet) {
+    padding-top: 7px;
+    margin-bottom: 40px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  h3 {
+    margin: 0;
+    padding-top: 30px;
+    width: 15px;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-weight: normal;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  img {
+    width: 170px;
+    margin: 0 32px 30px 0;
+  }
+
+  @media screen and (max-width: $mobile-max) {
+    margin-left: auto;
+    width: 217px;
+    h3 {
+      font-size: 12px;
+    }
+  }
+  @media screen and (min-width: $tablet) {
+    width: 270px;
+    h3 {
+      font-size: 14px;
+    }
+    img {
+      margin-right: 80px;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    width: 290px;
+    img {
+      width: 172px;
+      margin-right: 100px;
+    }
+  }
+  @media screen and (min-width: $desktop-plus) {
+    width: 470px;
+    img {
+      width: 280px;
+      margin-right: 170px;
+    }
+  }
+}
+
+.colorList {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-bottom: 15px;
+}
+.colorItem {
+  appearance: none;
+  border-radius: 0;
+  width: 10px;
+  height: 10px;
+  margin-right: 16px;
+  transition: 0.2s all linear;
+  &:checked {
+    border: 1px solid black;
+    transform: scale(1.5);
+  }
+}
+
+.cardDescription {
+  .name {
+    width: 168px;
+    height: 30px;
+    margin: 0 0 15px 0;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #000000;
+  }
+  .price {
+    margin: 0 0 15px 0;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+  }
+  @media screen and (min-width: $desktop-plus) {
+    .name {
+      width: 277px;
+      font-size: 14px;
+      line-height: 18px;
     }
   }
 }
