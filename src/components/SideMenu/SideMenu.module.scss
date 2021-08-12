@@ -1,0 +1,48 @@
+@import "../../scss/vars.scss";
+@keyframes showMenu {
+  0% {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.menu {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 9;
+  display: block;
+  width: 360px;
+  align-items: stretch;
+  transform: translateX(-100%);
+}
+.menuOpen {
+  transform: translateX(0);
+  animation: showModalSlide 600ms forwards;
+  background-color: $crema;
+}
+.link {
+  position: relative;
+  display: block;
+  text-align: left;
+  padding: 10px 0 10px 40px;
+  text-decoration: none;
+  color: $grey;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 500;
+  &:focus,
+  &:hover {
+    color: black;
+  }
+}
+.activeLink {
+  color: black;
+  font-size: 18px;
+}

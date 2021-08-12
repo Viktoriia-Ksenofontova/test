@@ -3,8 +3,21 @@
 
 .header {
   display: flex;
-  padding: 15px;
   box-shadow: 0px 6px 26px 0px rgba(0, 5, 97, 0.1);
+  @media screen and (max-width: $mobile-max) {
+    padding: 15px;
+  }
+  @media screen and (min-width: $tablet) {
+    padding: 30px 40px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding-left: 98px;
+    padding-right: 98px;
+  }
+  @media screen and (min-width: $desktop-plus-max) {
+    padding-left: 138px;
+    padding-right: 138px;
+  }
 }
 .headerLink {
   display: flex;
@@ -28,17 +41,4 @@
 
 .logoLink {
   margin-right: 50px;
-  // position: absolute;
-  // @media screen and (max-width: $mobile-max) {
-  //   left: 16px;
-  // }
-  // @media screen and (min-width: $tablet) {
-  //   left: 40px;
-  // }
-  // @media screen and (min-width: $desktop) {
-  //   left: 98px;
-  // }
-  // @media screen and (min-width: $desktop-plus-max) {
-  //   left: 140px;
-  // }
 }

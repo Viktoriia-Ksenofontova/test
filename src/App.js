@@ -4,6 +4,8 @@ import { Suspense, lazy } from 'react';
 import routes from './routes';
 import Spinner from './components/Loader';
 import Footer from "./components/Footer";
+import NavState from './context/navState';
+import Header from './components/Header';
 
 
 const HomePage = lazy(() =>
@@ -16,6 +18,9 @@ const Catalog = lazy(() =>
 function App() {
   return (
     <div className="wrapper">
+      <NavState>
+        <Header />
+      </NavState>
       <Suspense fallback={<Spinner />}>
          <Switch>
           <Route exact path={routes.home} component={HomePage} />

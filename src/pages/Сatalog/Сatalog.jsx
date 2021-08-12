@@ -1,7 +1,7 @@
 import ProductCard from '../../components/ProductCard';
 import { ReactComponent as IconSearch } from "../../images/icon_search.svg";
 import Modal from '../../components/Modal';
-import Header from "../../components/Header";
+// import Header from "../../components/Header";
 import { useState } from 'react';
 import Cart from "../../components/Cart";
 
@@ -89,7 +89,7 @@ const Сatalog = () => {
 
   return (
     <>
-      <Header onCartClick={handleCartClick}/>
+      {/* <Header onCartClick={handleCartClick}/> */}
       <main>
         <h2 className={styles.title}>Каталог</h2>
         <select
