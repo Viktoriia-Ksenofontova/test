@@ -12,7 +12,8 @@ import SideMenu from '../SideMenu';
 import styles from "./Header.module.scss";
 
 
-const Header = ({ onCartClick }) => {
+const Header = ({ onCartClick, shoppingListLength }) => {
+    
   const node = useRef();
   const { isMenuOpen, toggleMenuMode } = useContext(MenuContext);
   
@@ -51,9 +52,9 @@ const Header = ({ onCartClick }) => {
       </Link>
       
         <Cart className={styles.cart}
-        onClick={onCartClick}
+          onClick={onCartClick}
       />
-      <span className={styles.cartSum}>0</span>
+      <span className={styles.cartSum}>{shoppingListLength}</span>
       </div>
       
       <SideMenu />

@@ -48,7 +48,11 @@
       transform: scale(1.03);
     }
   }
+  .active {
+    background-color: $bordo;
+  }
 }
+
 .sale {
   background-color: $bordo;
   color: white;

@@ -2,6 +2,23 @@
 @import "../../scss/vars";
 main {
   padding: 15px;
+  min-height: calc(100vh - 90px);
+  @media screen and (min-width: $tablet) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding-left: 98px;
+    padding-right: 98px;
+  }
+  @media screen and (min-width: $desktop-plus-max) {
+    padding-left: 135px;
+    padding-right: 135px;
+  }
+}
+.sortModule {
+  display: flex;
+  justify-content: space-between;
 }
 .title {
   margin: 0 0 10px 0;
@@ -38,16 +55,6 @@ main {
   @media screen and (min-width: $tablet) {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 40px;
-  }
-  @media screen and (min-width: $desktop) {
-    padding: 0 95px;
-  }
-  @media screen and (min-width: $desktop-plus) {
-    padding: 0 98px;
-  }
-  @media screen and (min-width: $desktop-plus-max) {
-    padding: 0 135px;
   }
 }
 .productItem {
@@ -86,7 +93,4 @@ main {
   @media screen and (min-width: $desktop) {
     width: 370px;
   }
-  // @media screen and (min-width: $desktop-plus) {
-  //   width: 510px;
-  // }
 }

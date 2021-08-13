@@ -1,10 +1,12 @@
 @import "../../scss/vars.scss";
+@import "../../scss/breakpoints.scss";
 @keyframes showMenu {
   0% {
     opacity: 0;
-    transform: translateX(200px);
+    transform: translateX(-100%);
   }
   50% {
+    transform: translateX(-50%);
     opacity: 1;
   }
   100% {
@@ -16,22 +18,32 @@
   position: absolute;
   top: 0px;
   left: 0px;
-  z-index: 9;
-  display: block;
-  width: 360px;
   align-items: stretch;
   transform: translateX(-100%);
 }
 .menuOpen {
+  position: absolute;
+  z-index: 100;
   transform: translateX(0);
-  animation: showModalSlide 600ms forwards;
+  animation: showMenu 400ms linear;
   background-color: $crema;
+  width: 360px;
+
+  @media screen and (min-width: $tablet) {
+    margin-left: 40px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-left: 98px;
+  }
+  @media screen and (min-width: $desktop-plus-max) {
+    margin-left: 135px;
+  }
 }
 .link {
-  position: relative;
   display: block;
   text-align: left;
-  padding: 10px 0 10px 40px;
+  margin: 10px 0 10px 0px;
+  padding-left: 15px;
   text-decoration: none;
   color: $grey;
   font-size: 16px;

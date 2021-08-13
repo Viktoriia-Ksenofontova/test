@@ -1,11 +1,8 @@
 import ProductCard from '../../components/ProductCard';
 import { ReactComponent as IconSearch } from "../../images/icon_search.svg";
-import Modal from '../../components/Modal';
-// import Header from "../../components/Header";
 import { useState } from 'react';
-import Cart from "../../components/Cart";
-
 import styles from './Catalog.module.scss';
+// import { add, total } from 'cart-localstorage';
 
 const Сatalog = () => {
   const products = [
@@ -53,7 +50,6 @@ const Сatalog = () => {
   const [visibleProductList, setVisibleProductList] = useState(products);
   const [searchText, setSearchText] = useState("");
   const [category, setCategory] = useState("all");
-  const [showModalCart, setShowModalCart] = useState(false);
   
   const handleSearchTextChange = e => {
     setSearchText(e.currentTarget.value);
@@ -61,7 +57,7 @@ const Сatalog = () => {
 
   const handleSearchSubmit = e => {
     e.preventDefault();
-    const newList = products.filter(product => product.name.includes(searchText));
+    const newList = products.filter(product => product.name.toLowerCase().includes(searchText.toLowerCase()));
     // console.log(newList);
     setVisibleProductList(newList);
   };
@@ -76,37 +72,25 @@ const Сatalog = () => {
     }
   };
 
-  
-  const handleCloseModal = () => {
-    setShowModalCart(false);
-    document.body.style.overflow = "scroll";
-  };
-   const handleCartClick = () => {
-     setShowModalCart(true);
-     document.body.style.overflow = "hidden";
-  };
-   
-
   return (
     <>
-      {/* <Header onCartClick={handleCartClick}/> */}
       <main>
         <h2 className={styles.title}>Каталог</h2>
-        <select
+        <div className={styles.sortModule}>
+          <select
           value={category}
           name="category"
           className={styles.categorySelection}
           onChange={handleChangeCategory}>
-        <option value="all">Все категории</option>
-        <option value="dresses">Платья</option>
-        <option value="costumes">Костюмы</option>
-        <option value="outwear">Верхняя одежда</option>
-      </select>
+            <option value="all">Все категории</option>
+            <option value="dresses">Платья</option>
+            <option value="costumes">Костюмы</option>
+            <option value="outwear">Верхняя одежда</option>
+          </select>
 
-      <form className={styles.searchForm} onSubmit={handleSearchSubmit}>
-        <input
-          type="text"
-          placeholder="Поиск..."
+          <form className={styles.searchForm} onSubmit={handleSearchSubmit}>
+            <input type="text"
+              placeholder="Поиск..."
           className={styles.searchInput}
             value={searchText}
             onChange={handleSearchTextChange}
@@ -114,27 +98,24 @@ const Сatalog = () => {
           <button
             type="submit"
             className={styles.searchBtn}
-        >
+          >
           <IconSearch/>
           </button>
-      </form>
-      
+        </form>
+        </div>
+       
       <ul className={styles.productList}>
         {visibleProductList.map(product => (
           <li key={product.id} className={styles.productItem}>
-            <ProductCard product={product} />
+            <ProductCard product={product}
+              onClickLike={() => console.log("добавили в закладки")}
+              // onClickToCart={(product) => add(product)}
+            />
           </li>
         ))}
       </ul>
       </main>
       
-
-      {showModalCart && (
-        <Modal onCloseModal={handleCloseModal} >
-          <Cart shoppingList={products} />
-          
-        </Modal>
-      )}
     </>
   );
 }

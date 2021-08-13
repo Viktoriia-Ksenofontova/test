@@ -11,17 +11,17 @@ const Footer = () => {
         <p>Social</p>
       <ul className={styles.socialList}>
         <li>
-          <a href="#" className={styles.socialLink}>
+          <a href="https://www.instagram.com/virna.ua/" className={styles.socialLink} target="_blank" rel="noopener noreferrer" >
             <Instagram className={styles.socialIcon}/>
           </a>
         </li>
         <li>
-          <a href="#" className={styles.socialLink}>
+          <a href="https://www.facebook.com/virna.com.ua" className={styles.socialLink} target="_blank" rel="noopener noreferrer">
            <Facebook className={styles.socialIcon}/>
           </a>
         </li>
         <li>
-          <a href="#" className={styles.socialLink}>
+          <a href="https://www.youtube.com/channel/UCHbQO5T0cowxXm3FDjZyoTQ" className={styles.socialLink} target="_blank" rel="noopener noreferrer">
             <Youtube className={styles.socialIcon}/>
           </a>
         </li>
