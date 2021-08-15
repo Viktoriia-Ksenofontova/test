@@ -37,7 +37,7 @@ const ProductCard = ({ product }) => {
     <div>
       <h3 className={styles.category} >{category}</h3>
       <div className={styles.productInfo}>
-        <img src={img} alt={name} className={styles.productImage}/>
+        <img src={img} alt={name} className={styles.productImage} loading="lazy"/>
         {sale && <p className={styles.sale}> Sale </p>}
         <button type="button" className = {styles.btnLike} onClick={handleClickToFavourite}>
           <Like className = { isAddToFavourite ? styles.likeActive : styles.like }/> 
