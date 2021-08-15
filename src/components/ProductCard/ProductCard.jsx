@@ -1,43 +1,62 @@
-import styles from "./ProductCard.module.scss";
+import { useState, useContext, useEffect } from 'react';
 import { ReactComponent as Like } from "../../images/icon_like.svg";
-import { useState } from 'react';
-import { add, exists, remove, total } from 'cart-localstorage';
+import { add, exists, remove } from 'cart-localstorage';
+import { CounterContext } from '../../context/cartCounterState';
+import styles from "./ProductCard.module.scss";
 
-const ProductCard = ({ product, onClickToCart, onClickLike }) => {
-  const [isAddToFavourite, setAddToFavourite] = useState(product.likes);
+const ProductCard = ({ product }) => {
+  const { id, likes, img, name, category, sale, isNew, colors, price, old_price} = product;
+  const {incrementCartCounter, decrementCartCounter } = useContext(CounterContext);
+  
+  const [isAddToFavourite, setAddToFavourite] = useState(likes);
   const [isAddToCart, setAddToCart] = useState(false);
+  
+  useEffect(() => {
+    setAddToCart(exists(id))
+  }, [exists(id)]);
+  
   const handleClickToCart = () => {
-    setAddToCart(!isAddToCart);
-    // onClickToCart(product);
-   exists(product.id) ? remove(product.id) : add(product);
+    if (exists(id)) {
+      remove(id);
+      decrementCartCounter();
+      setAddToCart(false);
+    } else {
+      add(product);
+      incrementCartCounter();
+      setAddToCart(true);
+    }
   }
+
   const handleClickToFavourite = () => {
     setAddToFavourite(!isAddToFavourite);
-}
+    // TODO добавление в LocalStorage ...
+  }
+   
  
   return (
     <div>
-      <h3 className={styles.category} >{product.category}</h3>
+      <h3 className={styles.category} >{category}</h3>
       <div className={styles.productInfo}>
-        <img src={product.img} alt={product.name} className={styles.productImage}/>
-        {product.sale ? <p className={styles.sale}> Sale </p> : null}
+        <img src={img} alt={name} className={styles.productImage}/>
+        {sale && <p className={styles.sale}> Sale </p>}
         <button type="button" className = {styles.btnLike} onClick={handleClickToFavourite}>
           <Like className = { isAddToFavourite ? styles.likeActive : styles.like }/> 
         </button>
         
-        {product.new ? <p className={styles.new}> New </p> : null}
+        {isNew && <p className={styles.new}> New </p> }
 
          <div className={styles.btnWrapper}>
           <button type="button" onClick={handleClickToCart}
-            className={isAddToCart || exists(product.id) && styles.active}> в корзину </button>
+            className={isAddToCart ? styles.active : undefined}> в корзину </button>
         </div>
         
       </div>
       
       <div className={styles.colorList}>
-        {product.colors.map(color => (
+        {colors.map(color => (
           <input
-            name={product.id}
+            name={id}
+            key={color}
             value={color}
             type="radio"
             className={styles.colorItem}
@@ -45,10 +64,10 @@ const ProductCard = ({ product, onClickToCart, onClickLike }) => {
         />
         ))}
       </div>
-      <p className={styles.name}>{product.name}</p>
+      <p className={styles.name}>{name}</p>
       <div className={styles.price}>
-        <p >{product.price} грн </p>
-       {product.old_price? <span>{product.old_price} грн </span>: null}
+        <p >{price} грн </p>
+       {old_price && <span>{old_price} грн </span>}
       </div>
   
     </div>

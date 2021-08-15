@@ -1,15 +1,24 @@
-import styles from "./Cart.module.scss";
+import { useState, useContext } from 'react';
 import { ReactComponent as DeleteItem } from '../../images/closeBtn.svg';
+import { list, remove, total } from 'cart-localstorage';
+import { CounterContext } from '../../context/cartCounterState';
+import styles from "./Cart.module.scss";
 
-const Сart = ({shoppingList}) => {
+const Сart = () => {
+  const [shoppingList, setShoppingList] = useState(list());
+  const { decrementCartCounter } = useContext(CounterContext);
   
-  let sum = 0;
-  if (shoppingList.length !== 0) { sum = shoppingList.reduce((sum, currentValue) => { return sum + Number(currentValue.price) }, 0) };
+  const handleDeleteBtnClick = (id) => {
+    remove(id);
+    decrementCartCounter();
+    setShoppingList(shoppingList.filter(item => item.id !== id));
+   };
+
   return (
       <div className={styles.cart}>
       <h2 className={styles.title}> Корзина</h2>
     
-    {sum!==0 ? (
+    {shoppingList.length!==0 ? (
         <ul className={styles.shoppingList}>
      {shoppingList.map((product, i) => (
         <li key={product.id} className={styles.productItem}>
@@ -17,14 +26,14 @@ const Сart = ({shoppingList}) => {
           <img width="50" src={product.img} alt={product.name} className={styles.productImage} />
           <h3 className={styles.name}>{product.name}</h3>
           <p className={styles.price}>{product.price} грн</p>
-          <button type="button" className={styles.deleteBtn}>
+         <button type="button" onClick={()=>handleDeleteBtnClick(product.id)} className={styles.deleteBtn}>
             <DeleteItem width="15" />
           </button>
         </li>
       ))}
     </ul>) : (<p>Ваша корзина пуста</p>)}
         
-    <p>Сумма заказа: <b>{sum} </b> грн</p>
+    <p>Сумма заказа: <b>{total()} </b> грн</p>
     
     <button type="button" className={styles.toOrder}>
       Оформить заказ

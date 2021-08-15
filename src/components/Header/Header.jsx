@@ -1,10 +1,9 @@
 import { useRef, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
 import logo from '../../images/virna-logo.svg';
 import like from '../../images/icon_like.svg';
 import { ReactComponent as Cart } from '../../images/icon_cart.svg';
-
+import { CounterContext } from '../../context/cartCounterState';
 import { MenuContext } from '../../context/navState';
 import HamburgerButton from '../HamburgerButton';
 import SideMenu from '../SideMenu';
@@ -12,10 +11,11 @@ import SideMenu from '../SideMenu';
 import styles from "./Header.module.scss";
 
 
-const Header = ({ onCartClick, shoppingListLength }) => {
+const Header = ({ onCartClick }) => {
     
   const node = useRef();
   const { isMenuOpen, toggleMenuMode } = useContext(MenuContext);
+  const { counter } = useContext(CounterContext);
   
   const useOnClickOutside = (ref, handler) => {
   useEffect(() => {
@@ -44,17 +44,17 @@ const Header = ({ onCartClick, shoppingListLength }) => {
       <div className={styles.header}>
         <HamburgerButton />
       
-       <Link className={styles.logoLink}>
+      <Link className={styles.logoLink} to="/"> 
         <img src={logo} alt="logo" className={styles.logo} />
-        </Link>
-      <Link className={styles.headerLink}>
+      </Link>
+      <Link className={styles.headerLink} to="/favourite">
         <img src={like} alt="favourite" height="20" width= "20"/>
       </Link>
       
-        <Cart className={styles.cart}
+      <Cart className={styles.cart}
           onClick={onCartClick}
       />
-      <span className={styles.cartSum}>{shoppingListLength}</span>
+      <span className={styles.cartSum}>{counter}</span>
       </div>
       
       <SideMenu />

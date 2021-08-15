@@ -75,14 +75,14 @@ const HomePage = () => {
       <section className={styles.fashionSection}>
         <h2>The world of fashion </h2>
         <div>
-          <ul>
-          <li> size
+          <ul className={styles.filterList}>
+          <li className={styles.filterItem}> size
             <span> S / M </span>
           </li>
-          <li> style
+          <li className={styles.filterItem}> style
             <span> casual </span>
           </li>
-          <li> color
+          <li className={styles.filterItem}> color
             <span> blue </span>
           </li>
         </ul>
@@ -94,17 +94,14 @@ const HomePage = () => {
           <img src={imgForCard} alt="нога в кросовке" />
           <h3>product card</h3>
           <div className={styles.cardDescription}>
-            <div className={styles.colorList}>
-              <input value="pink" type="radio" checked
-            className={styles.colorItem}
-            style={{ backgroundColor: `#EEDBD5` }}/>
-              <input value="blue" type="radio" 
-            className={styles.colorItem}
-            style={{ backgroundColor: `#82BDCF` }}/>
-              <input value="bordo" type="radio" 
-            className={styles.colorItem}
-            style={{ backgroundColor: `#9C1744` }}/>  
-            </div>
+            <ul className={styles.colorList}>
+              <li className={styles.colorItem}
+            style={{ backgroundColor: `#EEDBD5` }}></li>
+              <li className={styles.colorItem}
+            style={{ backgroundColor: `#82BDCF` }}></li>
+              <li className={styles.colorItem}
+            style={{ backgroundColor: `#9C1744` }}></li>
+            </ul>
             <p className={styles.name}>Название товара может быть длинное</p>
             <p className={styles.price}>1150 грн</p>
           </div>

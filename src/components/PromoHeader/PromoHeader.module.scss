@@ -1,10 +1,6 @@
 @import "../../scss/breakpoints.scss";
 
-.header {
-  font-family: Cera Pro, sans-serif;
-}
-
-.nav {
+.promoHeader {
   display: flex;
   justify-content: space-between;
   @media screen and (max-width: $mobile-max) {

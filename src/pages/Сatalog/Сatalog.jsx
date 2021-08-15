@@ -1,8 +1,7 @@
+import { useState } from 'react';
 import ProductCard from '../../components/ProductCard';
 import { ReactComponent as IconSearch } from "../../images/icon_search.svg";
-import { useState } from 'react';
 import styles from './Catalog.module.scss';
-// import { add, total } from 'cart-localstorage';
 
 const Сatalog = () => {
   const products = [
@@ -13,7 +12,7 @@ const Сatalog = () => {
       price: 1150,
       old_price: 1350,
       sale: true,
-      new: false,
+      isNew: false,
       likes:true,
       category: "dresses",
       colors: ["A64D79", "F8DADD", "295494", "22402A"],
@@ -26,20 +25,20 @@ const Сatalog = () => {
       price: 1600,
       old_price: 2300,
       sale: false,
-      new: false,
+      isNew: false,
       likes: false,
       category: "costumes",
       colors: ["808080", "64391A"],
       size: ["l","m"],
     },
-      {
+    {
       id: 3,
       img:"image/product/catalog/img_outwear.jpg",
       name: "название товара может быть длинное",
       price: 1900,
       old_price: null,
       sale: false,
-      new: true,
+      isNew: true,
       likes: false,
       category: "outwear",
       colors: ["8B4513", "8B2252"],
@@ -58,7 +57,6 @@ const Сatalog = () => {
   const handleSearchSubmit = e => {
     e.preventDefault();
     const newList = products.filter(product => product.name.toLowerCase().includes(searchText.toLowerCase()));
-    // console.log(newList);
     setVisibleProductList(newList);
   };
 
@@ -73,10 +71,9 @@ const Сatalog = () => {
   };
 
   return (
-    <>
-      <main>
-        <h2 className={styles.title}>Каталог</h2>
-        <div className={styles.sortModule}>
+    <main>
+      <h2 className={styles.title}>Каталог</h2>
+      <div className={styles.sortModule}>
           <select
           value={category}
           name="category"
@@ -91,32 +88,27 @@ const Сatalog = () => {
           <form className={styles.searchForm} onSubmit={handleSearchSubmit}>
             <input type="text"
               placeholder="Поиск..."
-          className={styles.searchInput}
-            value={searchText}
-            onChange={handleSearchTextChange}
-          ></input>
-          <button
-            type="submit"
-            className={styles.searchBtn}
-          >
-          <IconSearch/>
-          </button>
-        </form>
-        </div>
+              className={styles.searchInput}
+              value={searchText}
+              onChange={handleSearchTextChange}
+            />
+            <button
+              type="submit"
+              className={styles.searchBtn}
+            >
+              <IconSearch/>
+            </button>
+          </form>
+      </div>
        
       <ul className={styles.productList}>
         {visibleProductList.map(product => (
           <li key={product.id} className={styles.productItem}>
-            <ProductCard product={product}
-              onClickLike={() => console.log("добавили в закладки")}
-              // onClickToCart={(product) => add(product)}
-            />
+            <ProductCard product={product}/>
           </li>
         ))}
       </ul>
-      </main>
-      
-    </>
+    </main>
   );
 }
  export default Сatalog;
